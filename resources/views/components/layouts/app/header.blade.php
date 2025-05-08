@@ -15,6 +15,14 @@
                 <flux:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </flux:navbar.item>
+
+                <flux:navbar.item icon="building-office-2" :href="route('experience.index')" :current="request()->routeIs('experience.index')" wire:navigate>
+                    Experiencia
+                </flux:navbar.item>
+
+                <flux:navbar.item icon="briefcase" :href="route('projects.index')" :current="request()->routeIs('projects.index')" wire:navigate>
+                    Proyectos
+                </flux:navbar.item>
             </flux:navbar>
 
             <flux:spacer />
