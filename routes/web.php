@@ -13,6 +13,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Volt::route('experience/{experience}/edit', 'experience.edit')->name('experience.edit');
 
     Volt::route('projects', 'projects.index')->name('projects.index');
+    Volt::route('projects/new', 'projects.new')->name('projects.new');
+    Volt::route('projects/{project}/edit', 'projects.edit')->name('projects.edit');
 });
 
 Route::middleware(['auth'])->group(function () {

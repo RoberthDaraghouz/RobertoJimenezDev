@@ -28,7 +28,8 @@
                 [&>div]:absolute [&>div]:h-full [&>div]:w-full
                 [&>div]:bg-[radial-gradient(#e1e6ff_1px,transparent_1px)]
                 [&>div]:[background-size:8px_8px]
-                [&>div]:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]">
+                [&>div]:[mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]
+                [&>div]:dark:bg-[radial-gradient(#052f4a_1px,transparent_1px)]">
                 <div></div>
             </div>
         </div>
@@ -39,7 +40,11 @@
         {{-- Experience --}}
         <div class="pb-6">
             <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center lg:text-start">Experiencia</div>
+                <div class="text-5xl text-slate-800 font-bold text-center
+                    dark:text-white/20
+                    lg:text-start lg:text-6xl">
+                        Experiencia
+                </div>
             </div>
 
             @livewire('home.experience')
@@ -49,72 +54,24 @@
         {{-- Projects --}}
         <div class="py-6">
             <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center lg:text-start">Proyectos</div>
-            </div>
-
-            <div class="px-3 xl:px-0">
-                <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
-                    <x-card.project
-                        image_source="{{ asset('img/businesspartnerplace.png') }}"
-                        title="Business Partner Place"
-                        subtitle="Laboral"
-                        year="2022">
-                        <p>
-                            Plataforma multiusuario dedicada a vincular exponentes, conferencistas y talleristas especializados con empresas, instituciones y organizaciones.
-                        </p>
-                        <p class="bg-gren-200">
-                            Autenticación, roles y permisos, compras y suscripciones a través de Paypal.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <x-badge color="red">Laravel</x-badge>
-                            <x-badge color="pink">Livewire</x-badge>
-                            <x-badge color="violet">Bootstrap</x-badge>
-                            <x-badge color="blue">MySQL</x-badge>
-                        </div>
-                    </x-card.project>
-
-                    <x-card.project
-                        image_source="{{ asset('img/glissanderos.png') }}"
-                        title="Glissanderos"
-                        subtitle="Personal"
-                        year="2022">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, soluta porro accusantium nihil aspernatur modi numquam iusto, deleniti doloremque ab atque. Ab nemo animi reprehenderit, quo totam maxime nam aspernatur!
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <x-badge color="red">Laravel</x-badge>
-                            <x-badge color="pink">Livewire</x-badge>
-                            <x-badge color="sky">JQuery</x-badge>
-                            <x-badge color="blue">MySQL</x-badge>
-                        </div>
-                    </x-card.project>
-
-                    <x-card.project
-                        image_source="{{ asset('img/roberth.jpg') }}"
-                        title="SAI (Sistema Administrativo Inmobiliario)"
-                        subtitle="Académico (Tesis)"
-                        year="2022">
-                        <p>
-                            Aplicación para la gestión de procesos, datos y archivos requeridos en la compraventa de inmuebles.
-                        </p>
-                        <p>
-                            Autenticación, captura de datos, carga y descarga de archivos.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <x-badge color="blue">PHP</x-badge>
-                            <x-badge color="violet">Bootstrap</x-badge>
-                            <x-badge color="sky">JQuery</x-badge>
-                            <x-badge color="blue">MySQL</x-badge>
-                        </div>
-                    </x-card.project>
+                <div class="text-5xl text-slate-800 font-bold text-center
+                    dark:text-white/20
+                    lg:text-start lg:text-6xl">
+                        Proyectos
                 </div>
             </div>
+
+            @livewire('home.projects')
         </div>
 
         {{-- Contact --}}
         <div class="py-6">
             <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center lg:text-start">Contacto</div>
+                <div class="text-5xl text-slate-800 font-bold text-center
+                    dark:text-white/20
+                    lg:text-start lg:text-6xl">
+                        Contacto
+                </div>
             </div>
 
             <div class="px-3 xl:px-0">

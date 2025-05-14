@@ -17,23 +17,37 @@ new class extends Component {
 <div>
     {{-- Header --}}
     <header class="flex justify-between">
-        <h1 class="text-2xl">Experiencia</h1>
-        <x-button.link :href="route('experience.new')" wire:navigate>
-            <flux:icon.plus class="size-4" />
-            Nueva <span class="hidden sm:flex">experiencia</span>
-        </x-button.link>
+        <h1 class="text-2xl font-bold dark:text-white">{{ __('Experience') }}</h1>
+
+        <flux:button
+            :href="route('experience.new')"
+            icon="plus"
+            size="sm"
+            wire:navigate>
+            <span class="hidden md:block">
+                {{ __('New experience') }}
+            </span>
+        </flux:button>
     </header>
 
     {{-- Results --}}
     <div class="py-6">
         @if ($experiences)
-            <div class="grid grid-cols-2 gap-6">
+            <div class="grid md:grid-cols-2 gap-6">
                 @foreach ($experiences as $experience)
                     <x-card.experience :$experience optional_buttons />
                 @endforeach
             </div>
         @else
-            <x-alert />
+            <flux:callout
+                heading="{{ __('Information') }}"
+                icon="information-circle"
+                color="purple"
+                variant="secondary">
+                    <flux:callout.text>
+                        {{ __('No results found.') }}
+                    </flux:callout.text>
+            </flux:callout>
         @endif
     </div>
 </div>

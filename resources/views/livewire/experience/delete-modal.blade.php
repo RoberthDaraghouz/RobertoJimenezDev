@@ -21,22 +21,36 @@ new class extends Component {
 
 <div>
     <flux:modal.trigger name="delete-experience-{{ $experience->id }}">
-        <x-button variant="danger">Eliminar</x-button>
+        <flux:button
+            variant="danger"
+            size="sm" >
+            {{ __('Delete') }}
+        </flux:button>
     </flux:modal.trigger>
+
     <flux:modal name="delete-experience-{{ $experience->id }}" class="min-w-lg">
         <form wire:submit="delete" class="space-y-6">
             <div>
-                <div class="text-xl text-slate-800 font-semibold">Confirmación de eliminación</div>
+                <div class="text-xl text-slate-800 font-semibold dark:text-white">{{ __('Deletion confirmation') }}</div>
                 <p class="text-center text-2xl py-6">
                     {{ $experience->company }}
                 </p>
             </div>
+
             <div class="flex justify-center gap-3">
                 <flux:modal.close>
-                    <x-button variant="secondary">Cancelar</x-button>
+                    <flux:button
+                        size="sm" >
+                            {{ __('Cancel') }}
+                    </flux:button>
                 </flux:modal.close>
 
-                <x-button variant="danger" type="submit">Eliminar</x-button>
+                <flux:button
+                    variant="danger"
+                    size="sm"
+                    type="submit" >
+                        {{ __('Delete') }}
+                </flux:button>
             </div>
         </form>
     </flux:modal>
