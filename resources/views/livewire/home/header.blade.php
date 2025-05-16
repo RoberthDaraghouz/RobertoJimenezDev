@@ -8,7 +8,7 @@
                     {{ config('app.name') }}
             </div>
             <div>
-                <button class="bg-sky-900 text-zinc-200 border-2 border-transparent rounded-full px-3 py-1 transition cursor-pointer flex items-center gap-1.5
+                <button class="bg-sky-900 text-white border-2 border-transparent rounded-full px-3 py-1 transition cursor-pointer flex items-center gap-1.5
                     hover:bg-white hover:text-zinc-800 hover:border-2 hover:border-zinc-200
                     dark:bg-sky-800
                     dark:hover:bg-sky-700 dark:hover:text-white dark:hover:border-sky-700

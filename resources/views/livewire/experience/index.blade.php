@@ -32,7 +32,7 @@ new class extends Component {
 
     {{-- Results --}}
     <div class="py-6">
-        @if ($experiences)
+        @if ($experiences->count())
             <div class="grid md:grid-cols-2 gap-6">
                 @foreach ($experiences as $experience)
                     <x-card.experience :$experience optional_buttons />

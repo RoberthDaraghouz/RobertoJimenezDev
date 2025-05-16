@@ -30,7 +30,7 @@ new class extends Component {
 
     {{-- Results --}}
     <div class="py-6">
-        @if ($projects)
+        @if ($projects->count())
             <div class="grid lg:grid-cols-2 gap-6">
                 @foreach ($projects as $project)
                     <x-card.project :$project optional_buttons />

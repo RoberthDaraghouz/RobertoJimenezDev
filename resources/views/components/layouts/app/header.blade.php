@@ -19,11 +19,15 @@
                 </flux:navbar.item>
 
                 <flux:navbar.item icon="building-office-2" :href="route('experience.index')" :current="request()->routeIs('experience.*')" wire:navigate>
-                    Experiencia
+                    {{ __('Experience') }}
                 </flux:navbar.item>
 
                 <flux:navbar.item icon="briefcase" :href="route('projects.index')" :current="request()->routeIs('projects.*')" wire:navigate>
-                    Proyectos
+                    {{ __('Projects') }}
+                </flux:navbar.item>
+
+                <flux:navbar.item icon="tag" :href="route('tags.index')" :current="request()->routeIs('tags.*')" wire:navigate>
+                    {{ __('Tags') }}
                 </flux:navbar.item>
             </flux:navbar>
 
@@ -93,10 +97,6 @@
                 <flux:icon.code-bracket class="size-5 text-slate-600 dark:text-sky-700" />
                 {{ config('app.name') }}
             </a>
-            {{-- <a href="{{ route('home') }}" class="font-semibold text-slate-800 flex items-center gap-2 mr-4 dark:text-white" wire:navigate>
-                <flux:icon.code-bracket class="size-5 text-slate-600 dark:text-sky-700" />
-                {{ config('app.name') }}
-            </a> --}}
 
 
             <flux:navlist variant="outline">
@@ -111,6 +111,10 @@
 
                     <flux:navlist.item icon="briefcase" :href="route('projects.index')" :current="request()->routeIs('projects.*')" wire:navigate>
                     {{ __('Projects') }}
+                    </flux:navlist.item>
+
+                    <flux:navlist.item icon="tag" :href="route('tags.index')" :current="request()->routeIs('tags.*')" wire:navigate>
+                    {{ __('Tags') }}
                     </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
