@@ -8,6 +8,7 @@ use Livewire\Volt\Component;
 new class extends Component {
     public Collection $projects;
 
+    #[On('project-deleted')]
     public function mount(): void {
         $this->projects = Project::orderBy('created_at', 'DESC')->get();
     }

@@ -19,6 +19,8 @@
             <flux:icon.camera class="size-32" />
         </div>
     @endif
+
+    {{-- Content --}}
     <div class="py-4 px-6 space-y-4 relative">
         <div>
             <h3 class="text-zinc-800 text-2xl font-bold dark:text-white">{{ $project->title }}</h3>
@@ -33,9 +35,22 @@
             <p>
                 {{ $project->description }}
             </p>
+
             <p>
                 {{ $project->details }}
             </p>
+
+            <div class="flex gap-2 flex-wrap">
+                @foreach ($project->tags as $tag)
+                    <flux:badge
+                        class="!text-white !py-0.5"
+                        variant="pill"
+                        style="background-color: {{ $tag->color }}">
+                            {{ $tag->name }}
+                    </flux:badge>
+                @endforeach
+            </div>
+
             @if ($optional_buttons)
                 <div class="flex gap-2 mt-4">
                     <flux:button
@@ -50,4 +65,42 @@
             @endif
         </div>
     </div>
+
+    {{-- Footer buttons --}}
+    @if ($project->link_online || $project->link_demo || $project->link_github)
+        <flux:button.group class="bg-zinc-100 dark:bg-zinc-800/50">
+            @if ($project->link_online)
+                <flux:button
+                    href="{{ $project->link_online }}"
+                    target="_blank"
+                    icon="globe-americas"
+                    variant="ghost"
+                    class="w-full rounded-none">
+                        Online
+                </flux:button>
+            @endif
+
+            @if ($project->link_demo)
+                <flux:button
+                    href="{{ $project->link_demo }}"
+                    target="_blank"
+                    icon="rocket-launch"
+                    variant="ghost"
+                    class="w-full rounded-none">
+                        Demo
+                </flux:button>
+            @endif
+
+            @if ($project->link_github)
+                <flux:button
+                    href="{{ $project->link_github }}"
+                    target="_blank"
+                    icon="github"
+                    variant="ghost"
+                    class="w-full rounded-none">
+                        Github
+                </flux:button>
+            @endif
+        </flux:button.group>
+    @endif
 </div>

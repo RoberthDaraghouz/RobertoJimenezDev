@@ -2,12 +2,24 @@
     <div class="absolute w-full">
         <nav class="relative max-w-7xl mx-auto flex justify-between items-center py-2 px-3 xl:px-0">
             <div class="text-5xl kolker-brush-regular text-zinc-800 flex items-center gap-1
-                dark:text-sky-800
+                dark:text-sky-700
                 md:text-7xl">
-                    <flux:icon.code-bracket class="size-8 text-zinc-600 dark:text-zinc-400" />
+                    <flux:icon.code-bracket class="size-8 text-zinc-600 dark:text-white/80" />
                     {{ config('app.name') }}
             </div>
-            <div>
+            <div class="flex gap-3">
+                <flux:dropdown>
+                    <flux:button variant="ghost" icon="paint-brush" class="dark:!text-white/80" />
+
+                    <flux:menu>
+                        <flux:menu.radio.group x-data variant="segmented" x-model="$flux.appearance">
+                            <flux:menu.radio value="light" icon="sun">{{ __('Light') }}</flux:menu.radio>
+                            <flux:menu.radio value="dark" icon="moon">{{ __('Dark') }}</flux:menu.radio>
+                            <flux:menu.radio value="system" icon="computer-desktop">{{ __('System') }}</flux:menu.radio>
+                        </flux:menu.radio.group>
+                    </flux:menu>
+                </flux:dropdown>
+
                 <button class="bg-sky-900 text-white border-2 border-transparent rounded-full px-3 py-1 transition cursor-pointer flex items-center gap-1.5
                     hover:bg-white hover:text-zinc-800 hover:border-2 hover:border-zinc-200
                     dark:bg-sky-800
@@ -29,10 +41,10 @@
                     dark:text-sky-700
                     lg:text-start">
                         Desarrollador Web
-                        <span class="text-zinc-500 dark:text-zinc-400">Jr.</span>
+                        <span class="text-zinc-500 dark:text-white/80">Jr.</span>
                 </div>
                 <p class="text-xl text-zinc-600 text-center lg:text-start transition ease-in-out
-                    dark:text-zinc-400">
+                    dark:text-white/80">
                         Soy un desarrollador residente en Rioverde, SLP.
                 </p>
                 <div class="flex flex-row gap-4 text-zinc-600 mx-auto lg:mx-px">
@@ -40,7 +52,7 @@
                         target="_blank"
                         class="inline-flex gap-1 text-zinc-600 cursor-pointer transition
                         hover:text-sky-900
-                        dark:text-zinc-400
+                        dark:text-white/50
                         dark:hover:text-white">
                         <flux:icon.github variant="mini" />
                         Github
@@ -49,7 +61,7 @@
                         target="_blank"
                         class="inline-flex gap-1 text-zinc-600 cursor-pointer transition
                         hover:text-sky-900
-                        dark:text-zinc-400
+                        dark:text-white/50
                         dark:hover:text-white">
                         <flux:icon.linkedin variant="mini" />
                         LinkedIn

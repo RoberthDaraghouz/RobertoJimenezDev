@@ -38,46 +38,14 @@
         @include('livewire.home.header')
 
         {{-- Experience --}}
-        <div class="pb-6">
-            <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center
-                    dark:text-white/20
-                    lg:text-start lg:text-6xl">
-                        Experiencia
-                </div>
-            </div>
-
-            @livewire('home.experience')
-        </div>
-
+        @livewire('home.experience')
 
         {{-- Projects --}}
-        <div class="py-6">
-            <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center
-                    dark:text-white/20
-                    lg:text-start lg:text-6xl">
-                        Proyectos
-                </div>
-            </div>
-
-            @livewire('home.projects')
-        </div>
+        @livewire('home.projects')
 
         {{-- Contact --}}
-        <div class="py-6">
-            <div class="max-w-7xl mx-auto mb-14 px-3 xl:px-0">
-                <div class="text-5xl text-slate-800 font-bold text-center
-                    dark:text-white/20
-                    lg:text-start lg:text-6xl">
-                        Contacto
-                </div>
-            </div>
+        @livewire('home.contact')
 
-            <div class="px-3 xl:px-0">
-                <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
-                </div>
-            </div>
-        </div>
+        @fluxScripts
     </body>
 </html>

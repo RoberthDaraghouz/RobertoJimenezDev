@@ -40,6 +40,9 @@ new class extends Component {
                             class="border-0 text-white"
                             style="background-color: {{ $tag->color }} !important">
                                 {{ $tag->name }}
+                                <span class="bg-white h-4 w-4 text-zinc-600 text-xs font-bold flex justify-center items-center rounded-full">
+                                    {{ $tag->projects->count() }}
+                                </span>
                         </flux:button>
 
                         <flux:menu>

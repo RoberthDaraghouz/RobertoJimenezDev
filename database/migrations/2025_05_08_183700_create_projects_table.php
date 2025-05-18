@@ -14,6 +14,9 @@ return new class extends Migration {
             $table->string('description', 255);
             $table->string('details', 255)->nullable();
             $table->string('image', 255)->nullable();
+            $table->string('link_online', 255)->nullable();
+            $table->string('link_demo', 255)->nullable();
+            $table->string('link_github', 255)->nullable();
             $table->timestamps();
         });
     }

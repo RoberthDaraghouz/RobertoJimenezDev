@@ -12,10 +12,16 @@ new class extends Component {
     }
 }; ?>
 
-<div class="px-3 xl:px-0">
-    <div class="max-w-7xl mx-auto grid gap-8">
-        @foreach ($experiences as $experience)
-            <x-card.experience :$experience />
-        @endforeach
-    </div>
+<div>
+    @if ($experiences->count())
+        <x-layouts.home-section title="{{ __('Experience') }}">
+            <div class="px-3 xl:px-0">
+                <div class="max-w-7xl mx-auto grid gap-8">
+                    @foreach ($experiences as $experience)
+                        <x-card.experience :$experience />
+                    @endforeach
+                </div>
+            </div>
+        </x-layouts.home-section>
+    @endif
 </div>

@@ -17,14 +17,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Volt::route('projects/{project}/edit', 'projects.edit')->name('projects.edit');
 
     Volt::route('tags', 'tags.index')->name('tags.index');
-});
 
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
-
-    Volt::route('settings/profile', 'settings.profile')->name('settings.profile');
-    Volt::route('settings/password', 'settings.password')->name('settings.password');
-    Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
+    Route::view('settings', 'livewire.settings.index')->name('settings');
 });
 
 require __DIR__.'/auth.php';

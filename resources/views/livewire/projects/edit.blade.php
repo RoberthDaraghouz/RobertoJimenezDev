@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\Tag;
 use App\Livewire\Forms\ProjectForm;
 use App\Models\Project;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Volt\Component;
 use Livewire\WithFileUploads;
 
@@ -9,9 +11,11 @@ new class extends Component {
     use WithFileUploads;
 
     public ProjectForm $form;
+    public Collection $tags;
 
     public function mount(Project $project): void {
         $this->form->setProject($project);
+        $this->tags = Tag::orderBy('name')->get();
     }
 
     public function removeCurrentImage(): void {

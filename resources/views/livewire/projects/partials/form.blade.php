@@ -15,7 +15,6 @@
         min="1900"
         max="{{ date('Y') }}"
         step="1"
-        value="{{ date('Y') }}"
         label="{{ __('Year') }}"
         class:input="text-end" />
 </div>
@@ -30,6 +29,37 @@
     wire:model="form.details"
     label="{{ __('Details') }}"
     placeholder="Ej. Implementación de pasarela de pagos, autenticación de usuarios, etc." />
+
+<flux:fieldset>
+    <flux:legend>{{ __('Tags') }}</flux:legend>
+
+    <div class="flex gap-4 flex-wrap">
+        @foreach ($tags as $tag)
+            <flux:checkbox
+                wire:model="form.tags"
+                value="{{ $tag->id }}"
+                label="{{ $tag->name }}" />
+        @endforeach
+    </div>
+</flux:fieldset>
+
+<flux:input
+    wire:model="form.link_online"
+    type="url"
+    label="{{ __('Link del proyecto en línea') }}"
+    placeholder="Ej. https://miproyecto.com" />
+
+<flux:input
+    wire:model="form.link_demo"
+    type="url"
+    label="{{ __('Link de demostración') }}"
+    placeholder="Ej. https://demo.miproyecto.com" />
+
+<flux:input
+    wire:model="form.link_github"
+    type="url"
+    label="{{ __('Link del proyecto en Github') }}"
+    placeholder="Ej. https://github.com/mi usuario/miproyecto" />
 
 <flux:input
     wire:model="form.image"
